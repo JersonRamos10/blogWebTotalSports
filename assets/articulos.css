@@ -1,0 +1,249 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #0e0d0d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+   
+}
+
+/*diseño para el encabezado*/
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/img/15643454732928.jpg') no-repeat center center/cover;
+    filter: brightness(50%);
+    z-index: -1;
+}
+header h1{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f16f33;
+}
+
+header p{
+    color:  #eeeeee;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+header span{
+    color: #c5c5c5;
+}
+
+/*menu de navegacion*/
+.navbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.navbar .menu li {
+    display: inline;
+}
+
+.navbar .menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    background-color: #f16f33;
+    border-radius: 5px;
+}
+
+
+
+/*Contenido principal de la pagina*/
+main {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px;
+    gap: 20px;
+    padding-top: 15px;
+}
+
+/*articulo de la pagina*/
+.contenido {
+    flex: 3;
+    background: #333;
+    padding: 20px;
+    border-radius: 8px;      
+    color: #ccc;
+}
+.contenido img {
+    width: 100%;
+    border-radius: 8px;
+}
+.titulo{
+    color: #ffffff;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+/*Diseño del aside(sidebar)*/
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.sidebar .card {
+    background: #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar .card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+}
+.sidebar .card img {
+    width: 100%;
+    border-radius: 8px;
+}
+.sidebar .card a {
+    display: block;
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn{
+    margin-top: 10px;
+    padding: 8px 16px;
+    color:rgb(216, 215, 215) ;
+    border-radius: 4px;
+    width: 70px;
+    background: #f16f33;
+    text-decoration: none;
+}
+.btn:hover{
+    background-color: rgb(5, 62, 116);
+    color:#ccc
+}
+/*Pie de pagina*/
+  
+footer {
+    width: 100%;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 20px;
+}
+.footer-contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-contacto, .footer-enlaces{
+    flex: 1 1 150px;
+        margin-bottom: 20px;
+    }
+    .footer-contacto, .footer-enlaces{
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #f16f33;
+    }
+    .footer-enlaces ul{
+        list-style: none;
+        padding: 0;
+    }
+    .footer-enlaces ul li {
+        margin-bottom: 10px;
+    }
+    .footer-enlaces ul li a{
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .footer-enlaces ul li a:hover {
+        color: #f16f33;
+    }
+    
+    .footer-copy{
+        text-align: center;
+        padding-top: 1rem;
+        border-top: 1px solid #444;
+        font-size: 0.9rem;
+    }
+    
+/*media queries para responsividad de la pagina*/
+/*Dispositivos moviles*/
+@media (max-width: 480px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contenido, .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+    .contenido img, .sidebar .card img {
+        width: 100%;
+    }
+    .btn {
+        width: 50%;
+        text-align: center;
+        padding: 5px 10px;
+    }
+}
+
+/* Tablets dispositivos medianos (481px a 768px) */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contenido, .sidebar {
+        width: 90%;
+    }
+}
+
+/* Pantallas grandes (más de 1200px) */
+@media (min-width: 1200px) {
+    main {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}

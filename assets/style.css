@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #0e0d0d;
+}
+
+/*encabezado*/
+header {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+   
+}
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/img/15643454732928.jpg') no-repeat center center/cover;
+    filter: brightness(50%);
+    z-index: -1;
+}
+header h1{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f16f33;
+}
+
+header p{
+    color: #eeeeee;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+header span{
+    color: #c5c5c5;
+}
+
+/*menu de navegacion*/
+.navbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.navbar .menu li {
+    display: inline;
+}
+
+.navbar .menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    background-color: #f16f33;
+    border-radius: 5px;
+}
+
+
+/*estilos para los articulos*/
+.articles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+.card {
+    background: #333;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+}
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.titulo-card{
+    color: #ffffff;
+    text-decoration: underline;
+    text-transform: capitalize;
+
+}
+
+.text-card{
+    color: #c5c5c5;
+}
+.ver-mas {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background:  #f16f33;
+    color: rgb(216, 215, 215);
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: rgb(151, 151, 151);
+    text-decoration:underline;
+    background-color: rgb(179, 74, 4);
+}
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+.footer-contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-contacto, .footer-enlaces{
+flex: 1 1 150px;
+    margin-bottom: 20px;
+}
+.footer-contacto, .footer-enlaces{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #f16f33;
+}
+.footer-enlaces ul{
+    list-style: none;
+    padding: 0;
+}
+.footer-enlaces ul li {
+    margin-bottom: 10px;
+}
+.footer-enlaces ul li a{
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-enlaces ul li a:hover {
+    color: #f16f33;
+}
+
+.footer-copy{
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+}
+
+/*Medias queries para hacer la pagina responsive */
+/*dispositivos moviles*/
+@media (max-width: 480px) {
+    .articles {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 90%;
+    }
+    header{
+        height: 30vh;
+
+    }
+    .ver-mas{
+    padding: 6px 12px;
+    font-size: 1rem;
+
+    }
+}
+/*tablets dispositivos medianos*/
+@media ((max-width: 1200px) and (max-width: 769px)) {
+    .articles {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 80%;
+    }
+    header {
+        height: 40vh;
+    }
+    
+}
+
+/*dispositivos grandes*/
+
+@media (min-width: 1200px) {
+    .articles {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .card {
+        width: 28%;
+    }
+}
